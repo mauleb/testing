@@ -7,7 +7,11 @@ pipeline {
 
     stages {
         stage('Configure') {
-            hash = sh(script: 'echo $(git log --pretty=format:\'%h\' -n 1)', returnStdout: true).trim()
+            steps {
+                script {
+                    hash = sh(script: 'echo $(git log --pretty=format:\'%h\' -n 1)', returnStdout: true).trim()
+                }
+            }
         }
 
         stage('Build') {
