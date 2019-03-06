@@ -3,7 +3,7 @@
 def hash
 
 pipeline {
-    agent linux
+    agent any
 
     stages {
         stage('Configure') {
