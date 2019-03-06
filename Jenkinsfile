@@ -3,7 +3,11 @@
 def hash
 
 pipeline {
-    agent any
+    agent {
+        node {
+            label 'linux'
+        }
+    }
 
     stages {
         stage('Configure') {
