@@ -16,6 +16,7 @@ pipeline {
                     hash = sh(script: 'echo $(git log --pretty=format:\'%h\' -n 1)', returnStdout: true).trim()
                     sh """
                         ls -al /var/run/docker.sock
+                        echo $UID
                     """
                 }
             }
