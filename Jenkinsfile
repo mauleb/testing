@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                        img build -t test:${hash} .
+                        docker build -t test:${hash} .
                     """
                 }
             }
