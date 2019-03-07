@@ -25,6 +25,7 @@ pipeline {
             steps {
                 script {
                     sh """
+                        whoami
                         echo "starting build..."
                         docker build -t test:${hash} .
                     """
